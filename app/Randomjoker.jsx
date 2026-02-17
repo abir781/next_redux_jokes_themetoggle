@@ -22,6 +22,7 @@ const Randomjoker = () => {
     }
     return (
       <div> 
+       
             {
                 falsyv ? <p className="text-xl font-semibold text-purple-700 
                bg-white/10 backdrop-blur-md 

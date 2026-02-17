@@ -5,6 +5,7 @@ const jokeslice= createSlice({
     initialState:{
         jokesboolean:false,
         jokesdata:"",
+        toggleboolean: false,
     },
     reducers:{
         setjokesboolean:(state)=>{
@@ -12,9 +13,12 @@ const jokeslice= createSlice({
         },
         setjokesdata:(state,action)=>{
             state.jokesdata=action.payload;
+        },
+        settoggleboolean:(state,action)=>{
+            state.toggleboolean=!state.toggleboolean;
         }
     },
 });
 
-export const {setjokesboolean,setjokesdata} = jokeslice.actions;
+export const {setjokesboolean,setjokesdata,settoggleboolean} = jokeslice.actions;
 export default jokeslice.reducer;
