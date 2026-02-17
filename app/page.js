@@ -17,7 +17,7 @@ export default function Home() {
   return (
     
 
-           <div className=" bg-[url('/rr.jpg')]">
+           <div className={togglesstate ? "bg-[url('/spot.jpg')]":"bg-[url('/rr.jpg')]"} >
               
            <div className="pt-10 pr-12 flex justify-end">
 
