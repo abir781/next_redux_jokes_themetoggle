@@ -40,6 +40,10 @@ export default function Home() {
               <Link href="/Jokerrandom">jokerrandompage</Link>
 
                <Link href="/favs">favjoke</Link>
+
+                <Link href="/bestjokes">Bestjokes</Link>
+
+
             </ul>
      <div className="flex min-h-screen items-center justify-center">
       <Randomjoker></Randomjoker>
