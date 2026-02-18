@@ -1,23 +1,14 @@
 'use client'; 
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setjokesboolean, setjokesdata } from './redux_kit/Feature';
-import { fetchjoke } from './redux_kit/Feature';
+import { setjokesboolean, setjokesdata } from '../redux_kit/Feature';
+import { fetchjoke } from '../redux_kit/Feature';
 
-import { setfavouritejoke } from './redux_kit/Favorite_feature';
-
-
-const Randomjoker = () => {
-
-    // const[joke,setjoke]=useState(null);
+const Jokerrandom = () => {
     const dispatch = useDispatch();
     // const [falsyv, setfalsyv] = useState(false);
     const falsyv = useSelector((state)=>state.jokex.jokesboolean);
-    const jokesdata = useSelector((state)=>state.jokex.jokesdata);
-     const favouritejk= useSelector((state)=> state.favouritex.favouritejokes);
-
-    
-    
+    const jokesdata = useSelector((state)=>state.jokex.jokesdata)
 
     const getjoke=()=>{
         // setfalsyv(true);
@@ -29,13 +20,6 @@ const Randomjoker = () => {
         // dispatch(setjokesdata())
         dispatch(fetchjoke());
 
-    }
-
-    const addfav =(joke)=>{
-        console.log(joke);
-      
-        dispatch(setfavouritejoke(joke));
-       
     }
     return (
       <div> 
@@ -55,19 +39,16 @@ const Randomjoker = () => {
             }
             
             
-            <div className='flex gap-3 justify-center'>
+            <div className='flex justify-center'>
 
                              <button onClick={getjoke} className="px-6 py-3 font-medium text-white bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 rounded-full shadow-lg hover:scale-105 transform transition duration-300 active:scale-95">
                               Get Joke
 </button>
 
-   <button onClick={()=>addfav(jokesdata)} className="px-6 py-3 font-medium text-white bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 rounded-full shadow-lg hover:scale-105 transform transition duration-300 active:scale-95">
-  Add to Favorite
-</button>
+
+
 
             </div>
-
-            
            
 
             
@@ -79,4 +60,4 @@ const Randomjoker = () => {
     );
 };
 
-export default Randomjoker;
+export default Jokerrandom;
